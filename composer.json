@@ -1,0 +1,5 @@
+{
+    "require": {
+        "krubio/perfect-logger": "^0.1.0"
+    }
+}
