@@ -18,10 +18,6 @@
             "PerfectApp\\": "src/"
         }
     },
-    "scripts": {
-        "start": "php -S localhost:8080 -t examples/"
-    },
-
     "minimum-stability": "stable",
     "require": {
         "krubio/perfect-logger": "^0.1.0"
