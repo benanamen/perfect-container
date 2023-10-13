@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6d18c52d9bdd7cc7a1867670b46e542",
+    "content-hash": "212220449c8b4a61f4252143263e8b99",
     "packages": [
         {
             "name": "krubio/perfect-logger",

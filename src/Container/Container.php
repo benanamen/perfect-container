@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace PerfectContainer;
+namespace PerfectApp\Container;
 
 use Closure;
 use ReflectionClass;
