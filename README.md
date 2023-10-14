@@ -1,5 +1,23 @@
 [![codecov](https://codecov.io/gh/benanamen/perfect-container/graph/badge.svg?token=9RC8mEw1Ty)](https://codecov.io/gh/benanamen/perfect-container)
 
+
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=coverage)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=bugs)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
+
+
+
+
+
+
 # PerfectContainer
 
 ## Description
