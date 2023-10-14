@@ -2,15 +2,13 @@
 
 namespace PerfectApp\Container;
 
-use Closure;
+use Psr\Log\LoggerInterface;
 use ReflectionClass;
 use ReflectionException;
-use Psr\Log\LoggerInterface;
+use RuntimeException;
 
 class Container
 {
-    private array $instances = [];
-    private array $bindings = [];
     private LoggerInterface $logger;
 
     public function __construct(LoggerInterface $logger)
@@ -18,7 +16,9 @@ class Container
         $this->logger = $logger;
     }
 
-    public function bind(string $abstract, mixed $concrete): void
+    private array $bindings = [];
+
+    public function bind(string $abstract, string $concrete): void
     {
         $this->bindings[$abstract] = $concrete;
     }
@@ -32,56 +32,44 @@ class Container
         return $this->resolveClass($className);
     }
 
-    private function resolveBinding(string $className): object
+    private function resolveBinding(string $abstract): object
     {
-        $concrete = $this->bindings[$className];
-
-        if ($concrete instanceof Closure) {
-            return $concrete($this);
-        }
-
-        return $this->resolveClass($concrete);
+        return $this->resolveClass($this->bindings[$abstract]);
     }
 
     private function resolveClass(string $className): object
     {
-        if (!isset($this->instances[$className])) {
-            $this->instances[$className] = $this->instantiateClass($className);
-        }
-
-        return $this->instances[$className];
-    }
-
-    private function instantiateClass(string $className): object
-    {
         try {
             $reflectionClass = new ReflectionClass($className);
+
+            if (!$reflectionClass->isInstantiable()) {
+                throw new ReflectionException("Class $className is not instantiable.");
+            }
+
+            $constructor = $reflectionClass->getConstructor();
+
+            if (is_null($constructor)) {
+                return new $className;
+            }
+
+            $constructorParameters = $constructor->getParameters();
+            $dependencies = $this->resolveDependencies($constructorParameters);
+
+            return $reflectionClass->newInstanceArgs($dependencies);
+
         } catch (ReflectionException $e) {
             $this->logger->error("Failed to create ReflectionClass for $className: {$e->getMessage()}");
-            http_response_code(500);
-            die('Fatal Error. See Error log for details.');
+            throw new RuntimeException('Fatal Error. See Error log for details.');
         }
-
-        $constructor = $reflectionClass->getConstructor();
-
-        if ($constructor) {
-            $dependencies = $this->resolveDependencies($constructor->getParameters());
-            return $reflectionClass->newInstanceArgs($dependencies);
-        }
-
-        return new $className();
     }
 
-    private function resolveDependencies(array $params): array
+    private function resolveDependencies(array $parameters): array
     {
         $dependencies = [];
 
-        foreach ($params as $param) {
-            $type = $param->getType();
-            if ($type && !$type->isBuiltin()) {
-                $dependency = $type->getName();
-                $dependencies[] = $this->get($dependency);
-            }
+        foreach ($parameters as $parameter) {
+            $dependency = $parameter->getType()->getName();
+            $dependencies[] = $this->get($dependency);
         }
 
         return $dependencies;
