@@ -8,5 +8,6 @@ class ClassWithDependencies
 {
     public function __construct(ExampleClass $example)
     {
+        // Intentionally Empty
     }
 }
