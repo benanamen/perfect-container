@@ -1,5 +1,9 @@
 [![codecov](https://codecov.io/gh/benanamen/perfect-container/graph/badge.svg?token=9RC8mEw1Ty)](https://codecov.io/gh/benanamen/perfect-container)
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/benanamen/perfect-container/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/benanamen/perfect-container/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/benanamen/perfect-container/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/benanamen/perfect-container/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/benanamen/perfect-container/badges/build.png?b=master)](https://scrutinizer-ci.com/g/benanamen/perfect-container/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/benanamen/perfect-container/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=coverage)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-container&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-container)
