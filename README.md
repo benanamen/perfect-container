@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/benanamen/perfect-container/graph/badge.svg?token=9RC8mEw1Ty)](https://codecov.io/gh/benanamen/perfect-container)
+
 # PerfectContainer
 
 ## Description
