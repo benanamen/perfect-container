@@ -16,7 +16,7 @@ class Container
         $this->bindings[$abstract] = $concrete;
     }
 
-    public function get(string $className): object
+    public function get(string $className): mixed
     {
         if (isset($this->bindings[$className])) {
             $concrete = $this->bindings[$className];
