@@ -2,8 +2,6 @@
 
 namespace Fixtures;
 
-
-
 class ClassWithDependencies
 {
     public function __construct(ExampleClass $example)
