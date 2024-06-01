@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   changelog:
@@ -12,16 +15,28 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      # Set up PHP 8.2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      # Install dependencies
+      - name: Install Composer dependencies
+        run: composer install
+
+      # Generate the changelog
       - name: Generate Changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
           output_file: 'CHANGELOG.md'
           version: auto
 
+      # Commit the changelog file
       - name: Commit Changelog
         run: |
-          git config --local user.name 'github-actions[bot]'
-          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
           git add CHANGELOG.md
           git commit -m 'chore: update changelog'
           git push
