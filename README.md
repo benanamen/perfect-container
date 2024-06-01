@@ -35,6 +35,22 @@ PerfectContainer is a lightweight, easy-to-use Dependency Injection Container de
 - **Auto-Resolving**: Automatically resolve dependencies through type-hinted constructor injection.
 - **PSR-11 Compliant**: Adheres to the PSR-11 Container Interface standard.
 
+## Upcoming Changes in Version 2.0.0
+
+In Version 2.0.0, we are introducing a method renaming for improved consistency:
+
+- **Method Renaming**: The `bind` method will be renamed to `set`. This change is aimed at providing clearer semantics and aligning with standard practices in dependency injection containers.
+
+
+### Deprecation Notice
+
+Starting from Version 1.1.0, the `bind` method is deprecated, and we encourage you to start using `set` to align with the upcoming changes in Version 2.0.0.
+
+- **Deprecated**: The `bind` method is deprecated and will be removed in a future release (Version 2.0.0). Please update your usage to `set` to ensure compatibility with future versions.
+
+
+We encourage you to update your usage accordingly to ensure compatibility with the latest version of PerfectContainer.
+
 ## Installation
 
 Use Composer to install the PerfectContainer library.
@@ -55,7 +71,7 @@ use PerfectApp\Container\Container;
 $container = new Container();
 
 // Binding and resolving dependencies
-$container->bind('SomeInterface', 'SomeImplementation');
+$container->set('SomeInterface', 'SomeImplementation');
 $instance = $container->get('SomeInterface');
 ```
 

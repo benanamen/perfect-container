@@ -11,7 +11,20 @@ class Container
     private array $instances = [];
     private array $bindings = [];
 
+    /**
+     * Binds an abstract to a concrete implementation.
+     *
+     * @deprecated Will be removed in Version 2. Use set() instead.
+     */
     public function bind(string $abstract, mixed $concrete): void
+    {
+        $this->bindings[$abstract] = $concrete;
+    }
+
+    /**
+     * Sets an abstract to a concrete implementation (alias for bind).
+     */
+    public function set(string $abstract, mixed $concrete): void
     {
         $this->bindings[$abstract] = $concrete;
     }
