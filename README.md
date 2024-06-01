@@ -1,4 +1,5 @@
 [![codecov](https://codecov.io/gh/benanamen/perfect-container/graph/badge.svg?token=9RC8mEw1Ty)](https://codecov.io/gh/benanamen/perfect-container)
+[![Build](https://github.com/benanamen/perfect-container/actions/workflows/build.yml/badge.svg)](https://github.com/benanamen/perfect-container/actions/workflows/build.yml)
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/benanamen/perfect-container/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/benanamen/perfect-container/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/benanamen/perfect-container/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/benanamen/perfect-container/?branch=master)
