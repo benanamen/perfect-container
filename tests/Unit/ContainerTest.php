@@ -23,6 +23,13 @@ class ContainerTest extends Unit
         $this->assertInstanceOf(ExampleClass::class, $instance);
     }
 
+    public function testSetAndResolveBinding(): void
+    {
+        $this->container->set('example', ExampleClass::class);
+        $instance = $this->container->get('example');
+        $this->assertInstanceOf(ExampleClass::class, $instance);
+    }
+
     public function testResolveClass(): void
     {
         $instance = $this->container->get(ExampleClass::class);
