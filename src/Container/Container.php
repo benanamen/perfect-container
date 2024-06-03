@@ -5,6 +5,7 @@ namespace PerfectApp\Container;
 use Closure;
 use ReflectionClass;
 use ReflectionException;
+use RuntimeException;
 
 class Container
 {
@@ -47,7 +48,7 @@ class Container
             } catch (ReflectionException $e) {
                 error_log("Failed to create ReflectionClass for $className: {$e->getMessage()}");
                 http_response_code(500);
-                die('Fatal Error. See Error log for details.');
+                throw new RuntimeException("Failed to create ReflectionClass for $className: {$e->getMessage()}");
             }
 
             $constructor = $reflectionClass->getConstructor();
@@ -67,8 +68,7 @@ class Container
                 try {
                     $this->instances[$className] = $reflectionClass->newInstanceArgs($dependencies);
                 } catch (ReflectionException $e) {
-                    error_log("Failed to instantiate $className: {$e->getMessage()}");
-                    die('Fatal Error. See Error log for details.');
+                    throw new RuntimeException("Failed to instantiate $className: {$e->getMessage()}");
                 }
             } else {
                 $this->instances[$className] = new $className();
